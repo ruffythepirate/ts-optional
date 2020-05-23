@@ -19,7 +19,7 @@ Refer to the [API documentation](https://ruffythepirate.github.io/ts-optional/gl
 You can install the package using
 
 ```bash
-npm i -S ts-optional
+npm i -S @ruffy/ts-optional
 ```
 
 You can then use the classes direct as:

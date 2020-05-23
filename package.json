@@ -1,5 +1,5 @@
 {
-  "name": "ts-optional",
+  "name": "@ruffy/ts-optional",
   "version": "1.0.0",
   "description": "An Optional type inspired by Scala's Option for better undefined handling.",
   "main": "dist/Optional.js",
