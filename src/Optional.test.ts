@@ -32,10 +32,10 @@ test('None.map should return None', () => {
 });
 
 test('None.foreach should do nothing and return itself', () => {
-  let changedMe = 0
+  let changedMe = 0;
   const noneVal = optional<number>(undefined);
   expect(noneVal.foreach(a => changedMe = a)).toEqual(none);
-  expect(changedMe).toEqual(0)
+  expect(changedMe).toEqual(0);
 });
 
 test('None.nonEmpty should return false', () => {
