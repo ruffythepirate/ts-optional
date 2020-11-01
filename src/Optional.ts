@@ -55,7 +55,7 @@ export abstract class Optional<T extends NonNullable<any>> {
 
   /**
    * If this optional isn't some, the or statement will be evaluated.
-   * @param func 
+   * @param func
    * Function that will be called if this is none.
    */
   abstract or(func: () => Optional<T>) : Optional<T>;
