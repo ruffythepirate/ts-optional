@@ -58,12 +58,20 @@ test('None.getOrElse should return else value', () => {
   expect(none.getOrElse(4)).toBe(4);
 });
 
+test('None.or should return else function value', () => {
+  expect(none.or(() => some(4))).toEqual(some(4));
+});
+
 test('Some.get should return value', () => {
   expect(some(4).get()).toEqual(4);
 });
 
 test('Some.getOrElse should return value', () => {
   expect(some(4).getOrElse(8)).toEqual(4);
+});
+
+test('Some.or should return value', () => {
+  expect(some(4).or(() => some(8))).toEqual(some(4));
 });
 
 test('Some.flatMap should return Optional', () => {

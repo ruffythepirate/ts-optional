@@ -54,6 +54,13 @@ export abstract class Optional<T extends NonNullable<any>> {
   abstract getOrElse(val: T) : T;
 
   /**
+   * If this optional isn't some, the or statement will be evaluated.
+   * @param func 
+   * Function that will be called if this is none.
+   */
+  abstract or(func: () => Optional<T>) : Optional<T>;
+
+  /**
    * Check if a value exists
    */
   abstract isEmpty(): boolean;
@@ -88,6 +95,10 @@ class None extends Optional<NonNullable<any>> {
 
   getOrElse(val: NonNullable<any>): NonNullable<any> {
     return val;
+  }
+
+  or(func: () => Optional<NonNullable<any>>): Optional<NonNullable<any>> {
+    return func();
   }
 
   isEmpty(): boolean {
@@ -131,6 +142,10 @@ class Some<T extends NonNullable<any>> extends Optional<T> {
 
   getOrElse(val: T): T {
     return this.value;
+  }
+
+  or(func: () => Optional<T>): Optional<T> {
+    return this;
   }
 
   isEmpty(): boolean {
